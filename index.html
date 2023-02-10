@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mixed messages</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="btn navigation">
+        <ul>
+            <li><button id='movies' onclick="getButton(value);" value="movies">Movie idea</button></li>
+            <li><button id='books' onclick="getButton(value);" value="books">Book idea</button></li>
+            <li><button id='hobbies' onclick="getButton(value);" value="hobbies">Pick up a new hobby</button></li>
+        </ul>
+    </div>
+    <div id="output">
+        <p id="movies-message"></p>
+        <p id="books-message"></p>
+        <p id="hobbies-message"></p>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
