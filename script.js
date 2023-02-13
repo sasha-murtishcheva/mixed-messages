@@ -1,9 +1,30 @@
 const messageWords = {
     movies: ['Fight Club', 'Fargo', 'The Green Mile', 'The Grand Budapest Hotel',
-        'Casablanca', 'The Notebook', 'Before Sunrise', 'A Star is Born'],
-    books: ['1984'],
+            'Casablanca', 'The Notebook', 'Before Sunrise', 'A Star is Born',
+            'The Godfather', 'Amelie', 'Amour', 'Annie Hall', 'The Apartment', 'Apocalypse now',
+            'Avengers: Endgame', 'Back to the Future', 'Badlands', 'Beauty and the Beast',
+            'The Best Years of Our Lives', 'Better Luck Tomorrow', 'Bicycle Thieves', 'The Big Sick',
+            'Black Panther', 'Black Hawk Down', 'Blade Runner', 'The Breakfast Club', 'Cabaret', 'Call Me By Your Name',
+            'Carol', 'Chinatown', 'Children of Men', 'Dead Poets Society', 'Die Hard', 'Do the Right Thing',
+            'Doctor Zhivago', 'Dog Day Afternoon', 'Dracula', 'Duck Soup',
+            'Edward Scissorhands', 'The Elephant Man', 'Enter the Dragon', 'The Exorcist',
+            'The Farewell', 'Fast Five', 'Forbidden Planet', 'Four Weddings and a Funeral',
+            'Frankenstein', 'The French Connection', 'Frida', 'Gattaca', 'The General',
+            'Goldfinger', 'Grand Illusion', 'Hero', 'High Noon', 'His Girl Friday', 'Inception', 'Inside Out',
+            'It Happened One Night', 'It\'s a Wonderful Life', 'John Wick', 'Jurassic Park', 'La Dolce Vita',
+            'Lady Bird', 'Lawrence of Arabia', 'The Matrix', 'Metropolis', 'Moonlight', 'My Left Foot',
+            'Nashville', 'The Night of the Hunter', 'No Country for Old Men',  'Only Yesterday', 'Open City',
+            'Pandora\'s Box', 'Pretty in Pink', 'Princess Mononoke', 'Psycho', 'Raging Bull', 'Roman Holiday',
+            'The Rules of the Game'],
+    books:   ['1984', 'The Lord of the Rings', 'The Kite Runner', 'Slaughterhouse-Five', 'To Kill a Mockingbird',
+            'The Book Thief', 'Wuthering Heights', 'The Catcher in the Rye', 'Jane Eyre', 'Animal Farm', 'Fahrenheit 451',
+            'Little Women', 'Frankenstein', 'Of Mice and Men', 'The Great Gatsby', 'Think and Grow', 'Pride and Prejudice',
+            'The Hobbit', 'Gone with the Wind', 'The Grapes of Wrath', 'Lord of the Flies', 'A Tale of Two Cities'],
     hobbies: ['Knitting', 'Sailing', 'Hiking', 'Volunteering',
-        'Learning how to play a musical instrument', 'Rock climbing', 'Dancing tango', 'Journaling', 'Fishing']
+            'Gardening', 'Rock climbing', 'Dancing tango', 'Journaling', 'Fishing',
+            'Camping', 'Rafting', 'Cycling', 'Golfing', 'Yoga', 'Pottery', 'Drawing',
+            'Painting', 'Calligraphy', 'Candle making', 'Origami', 'Woodworking', 'Sewing', 'Embroidery',
+            'Baking', 'Wine tasting', 'Chess', 'Learning a new language', 'Meditation']
 };
 
 function randomizer(lengthOfArray) {
@@ -20,16 +41,19 @@ function printMessage(choice) {
     if (choice === 'movies') {
         const movieMessages = ['How about watching', 'Have you seen', 'Have you checked out'
             , 'I recommend', 'One of my favorite movies is', 'You should watch', 'You might enjoy']
-        console.log(`${movieMessages[randomizer(movieMessages.length)]} '${randomChoice(messageWords, choice)}'?`);
+        return (`${movieMessages[randomizer(movieMessages.length)]} '${randomChoice(messageWords, choice)}'?`);
     } else if (choice === 'books') {
         const bookMessages = ['People recommend', 'I\'d would suggest reading', 'One of my favorite books is', 'You will love', 'I enjoyed'];
-        console.log(`${bookMessages[randomizer(bookMessages.length)]} '${randomChoice(messageWords, choice)}'.`);
+        return (`${bookMessages[randomizer(bookMessages.length)]} '${randomChoice(messageWords, choice)}'.`);
     } else if (choice === 'hobbies') {
-        const hobbiesMessages = ['is always a good idea', 'is what people need', 'would make everyone happy', 'is a new trend. Are you in?', 'is fun'];
-        console.log(`${randomChoice(messageWords, choice)} ${hobbiesMessages[randomizer(hobbiesMessages.length)]}.`);
+        const hobbiesMessages = ['is always a good idea', 'is what people need', 'would make everyone happy', 'is a new trend', 'is fun'];
+        return (`${randomChoice(messageWords, choice)} ${hobbiesMessages[randomizer(hobbiesMessages.length)]}.`);
     }
 }
 
-printMessage('movies');
-printMessage('books');
-printMessage('hobbies');
+function getButton(choice) {
+    document.getElementById(choice).addEventListener('click', function () {
+        document.getElementById(`${choice}-message`).innerText = printMessage(choice);
+    })
+}
+
