@@ -7,6 +7,7 @@
     background-color: #FFDFF9;
     font-family: 'Abril Fatface', cursive;
     font-size: 18px;
+
 }
 
 ul {
@@ -14,26 +15,19 @@ ul {
 }
 
 .navigation {
-    display: inline-flex;
-    flex-wrap: wrap;
     width: 100%;
-    height: auto;
-    align-items: center;
-    justify-content: center;
 }
 
 .navigation ul {
-    width: 200px;
-    height: 500px;
-    margin: 50px 0 0 70px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 200px;
+    margin: 200px 200px 50px;
 }
 
 .navigation ul li {
-    margin-top: 100px;
-}
-
-.navigation ul.answer {
-    width: 850px;
+    margin-top:  70px ;
 }
 
 .navigation ul li button {
@@ -42,10 +36,10 @@ ul {
     box-shadow: #422800 4px 4px 0 0;
     color: #422800;
     cursor: pointer;
-    width: 200px;
-    font-size: 1.5rem;
+    width: 280px;
+    font-size: 1.75rem;
     background-color: #ffffff;
-    padding: 20px 15px;
+    padding: 20px;
     text-decoration: none;
     user-select: none;
     -webkit-user-select: none;
@@ -57,45 +51,141 @@ ul {
     transform: translate(2px, 2px);
 }
 
-ul.answer .message {
+#answer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 2px solid #422800;
     border-radius: 30px;
     box-shadow: #422800 4px 4px 0 0;
     color: #422800;
     background-color: #ffffff;
     text-align: center;
-    height: 80px;
-    padding: 15px 15px;
-    font-size: 1.7rem;
+    height: 250px;
+    width: 70%;
+    margin: auto;
+    padding: 18px 18px;
+}
+
+#answer p {
+    font-size: 2rem;
+    background-color: transparent;
 }
 
 .star {
     background-size: 50px;
     background-repeat: no-repeat;
-    background-image: url("star.png");
-    background-position: right 97% top 33%;
+    background-image: url("star.png"), url("star.png");
+    background-position: right 97% top 10%, left 97% bottom 10%;
 
 }
 
-@media only screen and (max-width: 1024px) {
+/**************MEDIA QUERIES********************/
+
+
+@media only screen and (max-width: 1300px) {
 
 
     .navigation ul {
-        width: 80%;
-        height: 300px;
-        margin-bottom: 60px;
-    }
-
-    .navigation ul.buttons {
-        display: inline-flex;
-        height: 100px;
+        height: 340px;
+        margin: 30px 0;
     }
 
     .navigation ul li {
-        margin: 50px;
+        margin-top: 20px;
     }
 
     .navigation ul li button {
+        width: 600px;
+        padding: 20px;
+    }
+
+}
+
+
+@media only screen and (max-width: 1024px) {
+    #answer {
+        margin-top: 20px;
+        width: 70%;
+    }
+
+    #answer p {
+        font-size: 1.75rem;
+    }
+
+    .navigation ul {
+        margin: 0;
+        height: 300px;
+    }
+
+    .navigation ul li button {
+        width: 400px;
+        padding: 8px;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    #answer {
+        width: 80%;
+    }
+
+    #answer p {
+        font-size: 1.75rem;
+    }
+
+    .navigation ul {
+        height: 400px;
+        margin: 100px 50px 50px;
+    }
+
+    .navigation ul li {
+        margin-top: 13px;
+    }
+
+    .navigation ul li button {
+        width: 450px;
+        padding: 20px;
+    }
+
+}
+
+
+@media only screen and (max-width: 540px) {
+    #answer {
+        width: 90%;
+    }
+
+    .navigation ul {
+        margin: 30px 0;
+        height: 330px;
+    }
+
+    .navigation ul li button {
+        width: 350px;
+    }
+
+}
+
+@media only screen and (max-width: 460px) {
+    #answer {
+        width: 85%;
+        height: 300px;
+    }
+
+    #answer p {
+        font-size: 1.6rem;
+    }
+
+    .navigation ul {
+        margin: 30px 0;
+        height: 250px;
+    }
+
+    .navigation ul li button {
+        width: 250px;
+        padding: 8px;
+        font-size: 1.5rem;
     }
 
 }

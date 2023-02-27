@@ -28,17 +28,18 @@ const messageWords = {
 };
 
 /* returns an index within 0 and lengthOfArray - 1*/
-
 function randomizer(lengthOfArray) {
     return  Math.floor(Math.random() * lengthOfArray);
 }
 
+/* extracts a value from an object and returns it */
 function randomChoice(obj, choice) {
     const variety = obj[choice]; // stores an array of user's choice
     const index = randomizer(variety.length); // stores a random digit which doesn't exceed the length of the array
     return variety[index]; // An actual name of a movie, book or hobby
 }
 
+/* generates a message for a user */
 function printMessage(choice) {
     if (choice === 'movies') {
         const movieMessages = ['How about watching', 'Have you seen', 'Have you checked out'
@@ -53,9 +54,13 @@ function printMessage(choice) {
     }
 }
 
+/* event handler function
+* prints out a message in the HTML file */
 function getButton(choice) {
-    document.getElementById(choice).addEventListener('click', function () {
-        document.getElementById(`${choice}-message`).innerText = printMessage(choice);
+    document.getElementById('button').addEventListener('click', (e) => {
+        if (e.target.classList.contains(choice)) {
+            document.getElementById(`answer`).innerHTML = '<p class="message">' + printMessage(choice) + '</p>';
+        }
     })
 }
 

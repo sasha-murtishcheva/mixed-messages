@@ -8,20 +8,17 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="btn navigation">
-        <ul class="buttons">
-            <li><button id='movies' onclick="getButton(value)" value="movies">Movie idea</button></li>
-            <li><button id='books' onclick="getButton(value)" value="books">Book idea</button></li>
-            <li><button id='hobbies' onclick="getButton(value)" value="hobbies">Hobby idea</button></li>
+
+    <main class="btn navigation">
+        <ul class="buttons" id="button">
+            <li><button class="movies" onclick="getButton(value)" value="movies">Movie idea</button></li>
+            <li><button class="books" onclick="getButton(value)" value="books">Book idea</button></li>
+            <li><button class="hobbies" onclick="getButton(value)" value="hobbies">Hobby idea</button></li>
         </ul>
+    </main>
 
-        <ul class="answer">
-            <li id="movies-message" class="message star"></li>
-            <li id="books-message" class="message star"></li>
-            <li id="hobbies-message" class="message star"></li>
-        </ul>
+    <section id="answer" class="star">
+    </section>
 
-
-    </div>
 </body>
 </html>
