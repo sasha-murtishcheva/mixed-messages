@@ -27,6 +27,8 @@ const messageWords = {
             'Baking', 'Wine tasting', 'Chess', 'Learning a new language', 'Meditation']
 };
 
+/* returns an index within 0 and lengthOfArray - 1*/
+
 function randomizer(lengthOfArray) {
     return  Math.floor(Math.random() * lengthOfArray);
 }
